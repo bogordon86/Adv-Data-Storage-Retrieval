@@ -1,7 +1,7 @@
 <!--lint disable no-heading-punctuation-->
 <!--lint enable no-heading-punctuation-->
 
-<img src='Honolulu-HI.png' />
+<img src='images/Honolulu-HI.png' />
 
 I decided to plan a long holiday vacation in Honolulu, Hawaii! In order to plan my trip effectively, I decided to do some climate analysis on the area beforehand.  In fact, I created a climate analysis api.
 
