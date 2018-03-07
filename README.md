@@ -53,6 +53,15 @@ Below are the routes that I made:
 
   * Return a json list of the minimum temperature, the average temperature, and the max temperature for a given start or start-end range.
 
+ * To view the code in Python that I utilized to plot the charts refer to https://github.com/bogordon86/Hawaii-Climate-Analysis/blob/master/climate-analysis.md.
  
-
-
+ Here are the results:
+ <img src='output_17_0.png' />
+ * The average rain per month:
+ <img src='output_9_1.png' />
+ The average temps from last year during my proposed trip dates by day (May 1-15th).
+ <img src='output_22_1.png' />
+ Here is the cumulative average temp for the trip date range.
+ <img src='output_24_0.png' />
+ 
+ 
