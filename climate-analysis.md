@@ -28,7 +28,7 @@ import seaborn as sns
 
 
 ```python
-#Use SQLAlchemy create_engine to connect to your sqlite database.
+#Used SQLAlchemy create_engine to connect to the sqlite database.
 engine = create_engine("sqlite:///hawaii.sqlite", echo=False)
 conn = engine.connect()
 
@@ -36,7 +36,7 @@ conn = engine.connect()
 
 
 ```python
-#Use SQLALchemy automap_base() to reflect your tables into classes.
+#Used SQLALchemy automap_base() to reflect tables into classes.
 
 Base = automap_base()
 Base.prepare(engine, reflect = True)
@@ -53,20 +53,20 @@ Base.classes.keys()
 
 
 ```python
-#Save a reference to those classes called Station and Measurement.
+#Saved a reference to those classes called Station and Measurement.
 Station = Base.classes.hawaii_station
 Measurement = Base.classes.hawaii_measurement
 ```
 
 
 ```python
-#Start your engines! Instantiate a session.
+#Instantiate a session 
 session = Session(engine)
 ```
 
 
 ```python
-#use tab when you put your cursor after the period to be able to see the columns for each class.
+#If you use tab after Measurement.<tab> then you can see all the available operations to use on each.
 Measurement.
 Station.
 ```
@@ -81,7 +81,7 @@ Station.
 
 
 ```python
-#I designed a query to retrieve the last 12 months of precipitation data
+#Designed a query to retrieve the last 12 months of precipitation data.
 #Selected only the date and prcp values
 
 qry1 = session.query(Measurement.date, Measurement.prcp).filter(Measurement.date <= '2017-12-31').\
@@ -158,7 +158,7 @@ date1 = plot1_pd.index.values
 
 
 ```python
-# Create the plot
+# Created the plot
 sns.set()
 plt.clf()
 plt.figure(figsize=[12.8, 8])
@@ -170,7 +170,7 @@ plt.ylabel("Precipitation", fontsize=18)
 plt.tick_params(axis='y', labelsize=16)
 plt.tick_params(axis='x', labelsize=16, rotation=45)
 
-# Have to plot the chart once again as it doesn't stick after being shown
+# Plotted the chart once again as it didn't stick after being shown
 plot1 = plt.plot(x_axis, y_axis, color='steelblue', linewidth=5)
 plt.legend(labels=labels, loc='upper right', fontsize='large', frameon=True, edgecolor='black')
 plt.show()
