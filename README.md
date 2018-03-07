@@ -56,13 +56,9 @@ Below are the routes that I made:
  * To view the code in Python that I utilized to plot the charts refer to https://github.com/bogordon86/Hawaii-Climate-Analysis/blob/master/climate-analysis.md.
  
  Here are the results:
+ <img src='output_17_0.png' />
  
- output_17_0.png
- 
- output_22_1.png
- 
- output_24_0.png
- 
- output_9_1.png
- 
+ <img src='output_22_1.png' />
+ <img src='output_24_0.png' />
+ <img src='output_9_1.png' /> 
  
