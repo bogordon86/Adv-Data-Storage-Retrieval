@@ -53,6 +53,16 @@ Below are the routes that I made:
 
   * Return a json list of the minimum temperature, the average temperature, and the max temperature for a given start or start-end range.
 
+ * To view the code in Python that I utilized to plot the charts refer to https://github.com/bogordon86/Hawaii-Climate-Analysis/blob/master/climate-analysis.md.
  
-
-
+ Here are the results:
+ 
+ output_17_0.png
+ 
+ output_22_1.png
+ 
+ output_24_0.png
+ 
+ output_9_1.png
+ 
+ 
