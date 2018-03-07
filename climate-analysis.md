@@ -1,19 +1,10 @@
 
 
 ```python
-# Now I used Python and SQLAlchemy to do basic climate analysis and data exploration on your new weather station tables. 
-# All of the following analysis should be completed using SQLAlchemy ORM queries, Pandas, and Matplotlib.
-
-# Create a Jupyter Notebook file called climate_analysis.ipynb and use it to complete your climate analysis and data exporation.
-
-# Choose a start date and end date for your trip. Make sure that your vacation range is approximately 3-15 days total.
-
-# Use SQLAlchemy create_engine to connect to your sqlite database.
-
-# Use SQLAlchemy automap_base() to reflect your tables into classes.
-#Save a reference to those classes called Station and Measurement.
-```
-
+* I used Python and SQLAlchemy to do basic climate analysis and data exploration on my weather station tables. 
+* This analysis was completed using SQLAlchemy ORM queries, Pandas, and Matplotlib.
+* My work is stored in a Jupyter Notebook file called climate_analysis.ipynb.
+* The trip dates that I chose are May 1-15 since, after initial analysis, I concluded that the weather tends to be nice that time of year.
 
 ```python
 #Dependencies
@@ -90,8 +81,8 @@ Station.
 
 
 ```python
-#Design a query to retrieve the last 12 months of precipitation data
-#Select only the date and prcp values
+#I designed a query to retrieve the last 12 months of precipitation data
+#Selected only the date and prcp values
 
 qry1 = session.query(Measurement.date, Measurement.prcp).filter(Measurement.date <= '2017-12-31').\
         filter(Measurement.date >= '2017-01-01').all()
@@ -158,7 +149,7 @@ plot1_pd.head()
 
 
 ```python
-#Create variables to use in our data plot
+#Created variables to use in the data plot
 prcp1 = plot1_pd['prcp']
 date1 = plot1_pd.index.values
 #date1
@@ -179,7 +170,7 @@ plt.ylabel("Precipitation", fontsize=18)
 plt.tick_params(axis='y', labelsize=16)
 plt.tick_params(axis='x', labelsize=16, rotation=45)
 
-# Have to plot our chart once again as it doesn't stick after being shown
+# Have to plot the chart once again as it doesn't stick after being shown
 plot1 = plt.plot(x_axis, y_axis, color='steelblue', linewidth=5)
 plt.legend(labels=labels, loc='upper right', fontsize='large', frameon=True, edgecolor='black')
 plt.show()
@@ -195,7 +186,7 @@ plt.show()
 
 
 ```python
-#Use pandas to print the summary statistics for the precipitation data
+#Used pandas to print the summary statistics for the precipitation data
 plot1_pd.describe()
 ```
 
@@ -264,15 +255,15 @@ plot1_pd.describe()
 
 
 ```python
-#Design a query to calculate the total number of stations
+#Designed a query to calculate the total number of stations
 qry2 = session.query(Station.station).count()
 #qry2
 ```
 
 
 ```python
-#Design a query to find the most active stations
-#Do this by listing the stations and observation counts in descending order
+#Designed a query to find the most active stations
+#Listed the stations and observation counts in descending order
 qry3 = session.query(Measurement.station, func.count(Measurement.tobs)).\
     group_by(Measurement.station).\
     order_by(func.count(Measurement.tobs).desc())
@@ -310,7 +301,7 @@ qry3.limit(1).all()
 
 
 ```python
-#Design a query to retrieve the last twelve months of temperature observation data (tobs)
+#Designed a query to retrieve the last twelve months of temperature observation data (tobs)
 qry4 = session.query(Measurement.date, Measurement.tobs).group_by(Measurement.date).\
     filter(Measurement.date <= '2017-12-31').filter(Measurement.date >= '2017-01-01').all()
 #qry4
@@ -318,7 +309,7 @@ qry4 = session.query(Measurement.date, Measurement.tobs).group_by(Measurement.da
 
 
 ```python
-#Use the same query but also filter by station with highest number of temperature observation counts
+#Used the same query but also filter by station with highest number of temperature observation counts
 qry5 = session.query(Measurement.station, Measurement.date, Measurement.tobs).group_by(Measurement.date).\
     filter(Measurement.date <= '2017-12-31').filter(Measurement.date >= '2017-01-01').\
     filter(Measurement.station=="USC00519281").all()
@@ -392,7 +383,7 @@ plot2_pd.head()
 
 ```python
 sns.set()
-#Plot the results as a histogram with bins=12
+#Plotted the results as a histogram with bins=12
 x = plot2_pd['tobs']
 num_bins = 12
 # the histogram of the data
@@ -418,7 +409,7 @@ plt.show()
 
 
 ```python
-#Write a function called calc_temps that will accept a start date and end date in the format %Y-%m-%d 
+#Wrote a function called calc_temps that accepts a start date and end date in the format %Y-%m-%d 
 #and return the minimum, average, and maximum temperatures for that range of dates.
 def calc_temps(start_date, end_date):
     select = [Measurement.date, func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)]
@@ -428,7 +419,7 @@ def calc_temps(start_date, end_date):
 
 
 ```python
-#Calculate the temps for my trip by running calc_temps function using matching dates from last year
+#Calculated the temps for my trip by running calc_temps function using matching dates from last year
 data = calc_temps("2017-05-01", "2017-05-15")
 ```
 
@@ -512,7 +503,7 @@ plot3_pd.head()
 
 
 ```python
-#Create variables for my plot
+#Created variables for my plot
 p3_date = plot3_pd.index.values
 p3_tmin = plot3_pd['tmin']
 p3_tavg = plot3_pd['tavg']
@@ -524,7 +515,7 @@ p3_tmax = plot3_pd['tmax']
 ```python
 plt.clf()
 plt.figure(figsize=[10, 6])
-#Plot the min, avg, and max temperature from your previous query as a bar chart.
+#Plotted the min, avg, and max temperature from your previous query as a bar chart.
 #Use the average temperature as the bar height.
 
 #pmin = plt.bar(p3_date, p3_tmin, width, yerr=15)
@@ -549,7 +540,7 @@ plt.show()
 
 
 ```python
-#Calculate the total Avg Temp for my trip
+#Calculated the total Avg Temp for my trip
 totalavg = plot3_pd['tavg'].mean()
 totalavg
 ```
@@ -563,7 +554,7 @@ totalavg
 
 
 ```python
-#Plot the total Avg Temp for My Trip
+#Plotted the total Avg Temp for My Trip
 plt.figure(figsize=[3, 6])
 
 totalavg_plt = plt.bar('2017-05', totalavg, yerr=15, color='sandybrown', alpha=.5, label='Error bar is Min to Max Temp')
@@ -584,26 +575,3 @@ plt.show()
 
 
 
-```python
-#Optional Analysis
-#Calculate the rainfall per weather station using the previous year's matching dates
-
-```
-
-
-```python
-# Calculate the daily normals. Normals are the averages for min, avg, and max temperatures.
-
-# Create a function called daily_normals that will calculate the daily normals for a specific date. This date string will be in the format %m-%d. Be sure to use all historic tobs that match that date string.
-# Create a list of dates for your trip in the format %m-%d. Use the daily_normals function to calculate the normals for each date string and append the results to a list.
-# Load the list of daily normals into a Pandas DataFrame and set the index equal to the date.
-# Use Pandas to plot an area plot (stacked=False) for the daily normals.
-```
-
-
-```python
-# Now that you have completed your initial analysis, design a Flask api based on the queries that you have just developed.
-
-# Use FLASK to create your routes.
-
-```
