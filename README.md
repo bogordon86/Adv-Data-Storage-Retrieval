@@ -57,8 +57,11 @@ Below are the routes that I made:
  
  Here are the results:
  <img src='output_17_0.png' />
- 
+ * The average rain per month:
+ <img src='output_9_1.png' />
+ The average temps from last year during my proposed trip dates by day (May 1-15th).
  <img src='output_22_1.png' />
+ Here is the cumulative average temp for the trip date range.
  <img src='output_24_0.png' />
- <img src='output_9_1.png' /> 
+ 
  
