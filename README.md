@@ -3,19 +3,19 @@
 
 <img src='images/Honolulu-HI.png' />
 
-I decided to plan a long holiday vacation in Honolulu, Hawaii! In order to plan my trip effectively, I decided to do some climate analysis on the area beforehand.  In fact, I created a climate analysis api.
+Planning a long holiday vacation in Honolulu, Hawaii! Created a climate analysis API in order to see trends in HI weather before booking the trip.
 
 ## Step 1 - Data Engineering
 
-Here I used Python and Pandas to inspect the content of my weather data CSV files and cleaned the data.
+Used Python and Pandas to inspect the content of weather data CSV files and cleaned the data.
 
-All of this takes place in my Jupyter notebook titled `data_engineering.ipynb`.
+All of this takes place in a Jupyter notebook titled `data_engineering.ipynb`.
 
 ---
 
 ## Step 2 - Database Engineering
 
-Next I used SQLAlchemy to model the table schemas and created a sqlite database for your tables.
+Next, used SQLAlchemy to model the table schemas and created a sqlite database for the tables.
 
 This took place in a Jupyter Notebook called `database_engineering.ipynb`.
 
@@ -24,16 +24,16 @@ This took place in a Jupyter Notebook called `database_engineering.ipynb`.
 
 ## Step 3 - Climate Analysis and Exploration
 
-Here I used Python and SQLAlchemy to do basic climate analysis and data exploration on my weather station tables. You can find this work in my Jupyter Notebook file called `climate_analysis.ipynb`.
+Used Python and SQLAlchemy to do basic climate analysis and data exploration on the weather station tables. You can find this work in the Jupyter Notebook file called `climate_analysis.ipynb`.
 
 
 ---
 
 ## Step 4 - Climate App
 
-After completing my initial analysis, I designed a Flask api based on the queries that I developed.
+After completing an initial analysis, I designed a Flask API based on the developed queries
 
-Below are the routes that I made:
+Below are the routes:
 
 ### Routes
 
